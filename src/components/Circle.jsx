@@ -1,18 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Circle extends Component {
-  state = {}
-  render() {
-    return (
-      <div
-        onClick={()=>this.props.onClick(this.props.id)}
-        className="circle"
-        style={{ backgroundColor: this.props.color }}
-      >
-        {this.props.number}
-      </div>
-    );
-  }
+const Circle = ({ onClick, number, color, id }) => {
+  return (
+    <div
+      onClick={() => onClick(id)}
+      className="circle"
+      style={{ backgroundColor: color }}
+    >
+      {number}
+    </div>
+  );
 }
 
 export default Circle;

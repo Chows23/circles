@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Circle from './Circle'
 
 class CirclesList extends Component {
+
   state = {
     circles: [
       {
@@ -12,19 +13,17 @@ class CirclesList extends Component {
   }
 
   addCircle = () => {
-    console.log('add');
-    this.setState((prevState) => {
-      return {
-        circles: [...prevState.circles, { number: this.randomNumber(), color: this.randomColor() }]
-      }
-    })
+    // console.log('add');
+    this.setState((prevState) => ({
+      circles: [...prevState.circles, { number: this.randomNumber(), color: this.randomColor() }]
+    }))
   };
 
   handleRemoveCircle = (circleIndex) => {
     console.log('remove click', circleIndex);
-    this.setState(prevState => {
-      return { circles: prevState.circles.filter((_, index) => index !== circleIndex) }
-    })
+    this.setState(prevState => ({
+      circles: prevState.circles.filter((circle, index) => index !== circleIndex)
+    }))
   }
 
   randomColor() {
